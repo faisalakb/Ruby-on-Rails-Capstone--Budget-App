@@ -1,0 +1,63 @@
+/node_modules
+/config/database.yml
+/log
+# .gitignore for a Ruby on Rails project
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore the log files.
+/log/*.log
+
+# Ignore the public/system directory used by Paperclip and Carrierwave.
+/public/system
+
+# Ignore the tmp files.
+/tmp
+/tmp/*
+!/tmp/.keep
+
+# Ignore the coverage directory.
+/coverage/
+
+# Ignore macOS metadata files.
+.DS_Store
+
+# Ignore the config database file.
+/config/database.yml
+
+# Ignore the master key for decrypting credentials and secrets.
+/config/master.key
+
+# Ignore environment-specific files.
+/.env
+/.env.*
+
+# Ignore the yarn error log file.
+/yarn-error.log
+
+# Ignore the node_modules directory.
+/node_modules/
+
+# Ignore the public/packs directory.
+/public/packs/
+
+# Ignore local .env files.
+/.env.*
+
+# Ignore .byebug_history file.
+/byebug_history
+
+# Ignore Pow server settings.
+.powrc
+
+# Ignore the Spring application preloader.
+/spring/*.pid
+
+# Ignore puma control file.
+/tmp/pids
+
