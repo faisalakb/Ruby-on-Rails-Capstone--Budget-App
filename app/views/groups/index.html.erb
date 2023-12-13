@@ -1,0 +1,13 @@
+<!-- app/views/user_transaction_details/groups.html.erb -->
+<h1>User Transaction Details Groups</h1>
+
+<% @groups.each do |group| %>
+  <div>
+    <h2><%= group.name %></h2>
+    <p>Icon: <%= group.icon %></p>
+    <p>Total Amount: <%= group.user_transaction_details.sum(:amount) %></p>
+    <%= link_to 'View Transactions', category_path(group) %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Categories', categories_path %>

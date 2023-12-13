@@ -1,0 +1,25 @@
+<h1>Transactions for <%= @category.name %></h1>
+
+<p>Total Amount: <%= number_to_currency(@total_amount) %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.name %></td>
+        <td><%= number_to_currency(transaction.amount) %></td>
+        <td><%= transaction.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add a new transaction", new_category_transaction_path(@category) %>
+<%= link_to "Back", categories_path %>
