@@ -21,13 +21,9 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to category_transactions_path(@category), notice: 'Transaction was successfully created.'
     else
-    render :new
+      render :new
     end
-
   end
-  
-  
-  
 
   private
 

@@ -10,7 +10,7 @@ class Category < ApplicationRecord
     'fas fa-folder' => 'Folder',
     'fas fa-star' => 'Star',
     'fas fa-heart' => 'Heart',
-    'fas fa-globe' => 'Globe',
+    'fas fa-globe' => 'Globe'
   }.freeze
 
   def icon_name

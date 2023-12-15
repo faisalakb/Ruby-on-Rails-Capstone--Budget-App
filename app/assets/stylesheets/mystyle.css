@@ -31,6 +31,13 @@
   flex-shrink: 0;
 }
 
+.log-in {
+  background-color: #3778c2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
 .container .log-in {
   background-color: #3778c2;
   color: #fff;
@@ -39,7 +46,6 @@
 .container button:hover {
   font-weight: 700;
 }
-
 
 .appTitle {
   display: flex;
@@ -95,22 +101,6 @@ input::placeholder {
   border: 1px solid red;
 }
 
-.login-container {
-  position: relative;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
-}
-
-.log-in {
-  background-color: #3778c2;
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-
 .custom-arrow {
   color: #fff;
   text-decoration: none;
@@ -133,27 +123,27 @@ input::placeholder {
 .actions {
   margin-top: -344px;
   position: absolute;
-  right:0;
-  
+  right: 0;
 }
 
-.actions, .acLogin input[type="submit"] {
+.actions,
+.acLogin input[type="submit"] {
   background-color: #3778c2;
   color: #fff;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  height: 30px; 
+  height: 30px;
 }
 
-.acLogin{
+.acLogin {
   margin-top: -204px;
   position: absolute;
-  right:0;
+  right: 0;
   color: white;
 }
 
-.user{
+.user {
   display: flex;
   position: absolute;
   margin-left: 30px;
@@ -162,37 +152,38 @@ input::placeholder {
   border: none;
 }
 
-.custom-icon{
+.custom-icon {
   font-size: 75px;
 }
-.category{
+
+.category {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px;
 }
+
 .catName {
-  flex-grow: 1; 
-  text-align: center; 
+  flex-grow: 1;
+  text-align: center;
 }
 
 .catAmount {
   margin-left: auto;
 }
-.tranTitle{
+
+.tranTitle {
   display: flex;
   align-items: center;
   justify-items: center;
-  align-items: center;
-  border:2px solid green;
   margin: auto;
 }
 
-.totAmount{
+.totAmount {
   float: right;
 }
 
-.custom_tranBtn{
+.custom_tranBtn {
   float: right;
 }
 

@@ -17,15 +17,13 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.build(category_params)
-  
+
     if @category.save
       redirect_to categories_path, notice: 'Category was successfully created.'
     else
       render :new
     end
   end
-  
-  
 
   private
 
