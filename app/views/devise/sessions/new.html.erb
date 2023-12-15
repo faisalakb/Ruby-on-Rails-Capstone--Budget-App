@@ -1,14 +1,18 @@
-<h2>Log in</h2>
+<%= stylesheet_link_tag 'mystyle' %>
+<div class="log-in">
+  <%= link_to root_path, class: "fas fa-arrow-left custom-arrow" do %>
+  <% end %>
+  <h2 class="regTitle">LOGIN</h2>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-container' }) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -18,9 +22,10 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="acLogin">
+    <%= f.submit "Log in", class: 'submit' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

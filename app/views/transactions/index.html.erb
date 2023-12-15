@@ -1,25 +1,47 @@
-<h1>Transactions for <%= @category.name %></h1>
-
-<p>Total Amount: <%= number_to_currency(@total_amount) %></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Created At</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @transactions.each do |transaction| %>
-      <tr>
-        <td><%= transaction.name %></td>
-        <td><%= number_to_currency(transaction.amount) %></td>
-        <td><%= transaction.created_at %></td>
-      </tr>
+  <%= stylesheet_link_tag 'mystyle' %>
+  <div class="log-in">
+    <%= link_to categories_path, class: "fas fa-arrow-left custom-arrow" do %>
     <% end %>
-  </tbody>
-</table>
+    <h2 class="regTitle">TRANSACTIONS</h2>
+  </div>
+  <div class="d-flex flex-row-reverse bd-highlight" style="background-color:#3778c2">
+    <div class="p-2 bd-highlight" style="color:#9cb8db">Most ancient</div>
+    <div class="p-2 bd-highlight" style="color:#c1d2e8">Most recent</div>
+  </div>
 
-<%= link_to "Add a new transaction", new_category_transaction_path(@category) %>
-<%= link_to "Back", categories_path %>
+  <div class="d-flex flex-row-reverse bd-highlight bg-white">
+    <div class="p-2 bd-highlight">$00.0</div>
+    <div class="p-2 bd-highlight">Gift credit</div>
+  </div>
+  <hr/>
+  <br/>
+
+ <h4 class="tranTitle"><strong style="margin:auto">Transactions for:  <%= @category.name %> </strong> </h4>
+ <h4 class="totAmount" style="color:skyblue"><strong>Total Amount :</strong> <%= number_to_currency(@total_amount) %></h4>
+
+<br/>
+<br/>
+
+<div class="mt-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= transaction.name %></td>
+          <td><%= number_to_currency(transaction.amount) %></td>
+          <td><%= transaction.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br/>
+<%= link_to "Add a new transaction", new_category_transaction_path(@category), class: "btn btn-primary custom_tranBtn" %>
+
