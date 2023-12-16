@@ -35,6 +35,8 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 
+# Create necessary directories
+RUN mkdir -p log tmp
 
 # Final stage for app image
 FROM base
