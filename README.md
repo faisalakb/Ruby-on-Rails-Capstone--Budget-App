@@ -59,7 +59,7 @@ Budget App is an expense tracking app that allows user to create new transaction
 
 ## :rocket: Live Demo
 
-- [Live Demo]( )
+- [Live Demo](https://faisalakb.github.io/Ruby-on-Rails-Capstone--Budget-App/ )
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
