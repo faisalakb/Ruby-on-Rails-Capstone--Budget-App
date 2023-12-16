@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @category = Category.find(params[:category_id])
+    @category = Category.includes(:user_transaction_details).find(params[:category_id])
     @transactions = @category.user_transaction_details.order(created_at: :desc)
     @total_amount = @category.total_amount
   end
@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:category_id])
+    @category = Category.includes(:user_transaction_details).find(params[:category_id])
     @transaction = current_user.user_transaction_details.build(transaction_params)
     @transaction.group_transactions.build(category: @category)
 
