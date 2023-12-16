@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "npm run build"
+  },
   "devDependencies": {
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
