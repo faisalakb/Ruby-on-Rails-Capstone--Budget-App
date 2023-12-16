@@ -6,7 +6,7 @@ RSpec.describe 'categories/index', type: :view do
 
   before do
     allow(view).to receive(:current_user).and_return(user)
-    assign(:categories, create_list(:category, 3, user: user))
+    assign(:categories, create_list(:category, 3, user:))
     render
   end
 

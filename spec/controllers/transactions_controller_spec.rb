@@ -5,7 +5,7 @@ RSpec.describe TransactionsController, type: :controller do
     it 'redirects to sign-in page when user is not signed in' do
       user = create(:user, email: 'test@example.com', password: 'password', name: 'Test User')
 
-      category = create(:category, user: user)
+      category = create(:category, user:)
 
       get :index, params: { category_id: category.id }
 

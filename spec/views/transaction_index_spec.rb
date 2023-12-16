@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Transactions index page with sign-in', type: :feature do
   let(:user) { create(:user, email: 'test@example.com', password: 'password', name: 'Test User') }
-  let(:category) { create(:category, user: user, name: 'Example Category') }
+  let(:category) { create(:category, user:, name: 'Example Category') }
 
   scenario '1. redirects to the sign-in page when accessing transactions index' do
     visit category_transactions_path(category)

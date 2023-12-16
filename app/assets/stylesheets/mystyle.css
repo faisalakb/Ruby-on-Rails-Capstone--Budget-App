@@ -161,7 +161,6 @@ input::placeholder {
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  
 }
 
 .catName {
@@ -196,9 +195,9 @@ input::placeholder {
 .cutomAddCatBtn {
   position: fixed;
   bottom: 0;
-  width:100%;
- 
+  width: 100%;
 }
-.transAt{
+
+.transAt {
   margin-left: 20%;
 }
