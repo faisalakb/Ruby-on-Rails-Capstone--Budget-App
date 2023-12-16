@@ -1,5 +1,4 @@
 /node_modules
-/config/database.yml
 /log
 # .gitignore for a Ruby on Rails project
 

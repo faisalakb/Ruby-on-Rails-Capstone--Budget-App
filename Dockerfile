@@ -1,18 +1,18 @@
 # syntax = docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=2.7.6
+ARG RUBY_VERSION=3.2.2
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
 # Rails app lives here
 WORKDIR /rails
 
+ARG RAILS_MASTER_KEY
 # Set production environment
 ENV RAILS_ENV="production" \
+    BUNDLE_WITHOUT="development:test" \
     BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
-
+    RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -34,8 +34,9 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
+# Create necessary directories
+RUN mkdir -p log tmp
 
 # Final stage for app image
 FROM base

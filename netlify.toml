@@ -1,0 +1,24 @@
+[build]
+  # Command to build your site
+  command = "jekyll build"
+  publish = "_site"
+  
+  # Directory to change to before starting a build
+ 
+
+[context.production.environment]
+  # Environment variables for production builds
+  NODE_ENV = "production"
+
+[context.split1]
+  # Configuration for a different build context, for example, a different branch
+  command = "npm run build:split1"
+  base = "split1-dist"
+
+# Add more contexts as needed
+
+[deploy]
+  # Netlify site settings
+  site = "BudgetApp"
+  production = true
+  # Add other deploy settings as needed

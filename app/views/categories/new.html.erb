@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag 'mystyle' %>
+  <div class="log-in">
+    <%= link_to categories_path, class: "fas fa-arrow-left custom-arrow" do %>
+    <% end %>
+    <h2 class="regTitle">New Category</h2>
+  </div>
+  <div class="d-flex flex-row-reverse bd-highlight" style="background-color:#3778c2">
+    <div class="p-2 bd-highlight" style="color:#9cb8db">Most ancient</div>
+    <div class="p-2 bd-highlight" style="color:#c1d2e8">Most recent</div>
+  </div>
+
+  <div class="d-flex flex-row-reverse bd-highlight bg-white">
+    <div class="p-2 bd-highlight">$00.0</div>
+    <div class="p-2 bd-highlight">Gift credit</div>
+  </div>
+  <hr/>
+  <br/>
+
+<%= form_for @category, url: categories_path, html: { class: 'my-4' } do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br/>
+  <div class="mb-3">
+    <%= f.label :name, class: 'form-label' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Category Name" %>
+  </div>
+
+  <br>
+  <div class="mb-3">
+    <%= f.label :icon, class: 'form-label' %>
+    <%= f.select :icon, Category::ICONS_MAPPING.keys.map { |key| [Category::ICONS_MAPPING[key], key] }, { prompt: 'Select an icon' }, class: 'form-select' %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.submit "Create Category", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+

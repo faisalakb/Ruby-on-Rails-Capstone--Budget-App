@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag 'mystyle' %>
+<main>
+  <div class="log-in">
+    <%= link_to root_path, class: "fas fa-arrow-left custom-arrow" do %>
+    <% end %>
+    <h2 class="regTitle">CATEGORIES</h2>
+  </div>
+  <div class="d-flex flex-row-reverse bd-highlight" style="background-color:#3778c2">
+    <div class="p-2 bd-highlight" style="color:#9cb8db">Most ancient</div>
+    <div class="p-2 bd-highlight" style="color:#c1d2e8">Most recent</div>
+  </div>
+
+  <div class="d-flex flex-row-reverse bd-highlight bg-white">
+    <div class="p-2 bd-highlight">$00.0</div>
+    <div class="p-2 bd-highlight">Gift credit</div>
+  </div>
+  <hr/>
+  <br/>
+<div class="d-flex flex-column align-item-center" >
+<% @categories.each do |category| %>
+<%= link_to  category_transactions_path(category), style: "text-decoration: none; color: inherit;"  do %>
+  <div class="category">
+  <i class="<%= category.icon %> custom-icon fa-2x" ></i>
+  <h2 class="catName"><%= category.name %></h2>
+    
+  <p class="catAmount">Total Amount: <%= number_to_currency(category.total_amount) %></p>
+    
+  </div>
+  <% end %>
+  <hr/>
+<% end %>
+
+</div>
+
+ <br/>
+ 
+  <div class="p-2 d-flex justify-content-center cutomAddCatBtn" style="background-color:#5fb523">
+    <%= link_to "Add a new category", new_category_path(current_user), class: "btn border border-white text-white"%>
+  </div>
+</main>
