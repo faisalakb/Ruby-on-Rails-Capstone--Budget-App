@@ -7,12 +7,12 @@ FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 # Rails app lives here
 WORKDIR /rails
 
+ARG RAILS_MASTER_KEY
 # Set production environment
 ENV RAILS_ENV="production" \
+    BUNDLE_WITHOUT="development:test" \
     BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
-
+    RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -34,7 +34,7 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE=`bin/rake secret` bin/rake assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 
 # Final stage for app image
