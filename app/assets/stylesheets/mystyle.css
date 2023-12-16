@@ -161,11 +161,13 @@ input::placeholder {
   flex-direction: row;
   align-items: center;
   padding: 10px;
+  
 }
 
 .catName {
   flex-grow: 1;
   text-align: center;
+  justify-content: center;
 }
 
 .catAmount {
@@ -189,4 +191,14 @@ input::placeholder {
 
 .nxtBtn {
   margin-top: -355px;
+}
+
+.cutomAddCatBtn {
+  position: fixed;
+  bottom: 0;
+  width:100%;
+ 
+}
+.transAt{
+  margin-left: 20%;
 }

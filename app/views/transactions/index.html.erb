@@ -22,26 +22,21 @@
 <br/>
 <br/>
 
-<div class="mt-5">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Created At</th>
-      </tr>
-    </thead>
-    <tbody>
+
+<div class="d-flex flex-column align-item-center" > 
       <% @transactions.each do |transaction| %>
-        <tr>
-          <td><%= transaction.name %></td>
-          <td><%= number_to_currency(transaction.amount) %></td>
-          <td><%= transaction.created_at %></td>
-        </tr>
+      <div class="category">
+          <i class="<%= @category.icon %> custom-icon fa-2x" ></i>
+          <h2 class="catName"><%= transaction.name %></h2>
+          <strong><%= number_to_currency(transaction.amount) %></strong>
+          <br>  
+      </div>
+      <div class="transAt"><p><%= transaction.created_at %></p></div>
+       <hr/>
       <% end %>
-    </tbody>
-  </table>
+     
 </div>
 <br/>
-<%= link_to "Add a new transaction", new_category_transaction_path(@category), class: "btn btn-primary custom_tranBtn" %>
-
+<div class="p-2 d-flex justify-content-center cutomAddCatBtn" style="background-color:#5fb523">
+<%= link_to "Add a new transaction", new_category_transaction_path(@category), class: "btn border border-white text-white" %>
+</div>
