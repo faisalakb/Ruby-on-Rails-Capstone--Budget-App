@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.7.6'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'factory_bot_rails'
 gem 'rails', '~> 7.1.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -52,6 +53,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'letter_opener'
+  gem 'rspec-rails'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -70,4 +72,5 @@ end
 
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'rails-controller-testing'
 gem 'rubocop', '>= 1.0', '< 2.0'
