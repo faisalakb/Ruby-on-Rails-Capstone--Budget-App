@@ -4,7 +4,7 @@
   publish = "_site"
   
   # Directory to change to before starting a build
-  base = "dist" # Update this to your build output directory
+ 
 
 [context.production.environment]
   # Environment variables for production builds
